@@ -1,4 +1,4 @@
-"""yomamabot URL Configuration
+"""capitalbot URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.9/topics/http/urls/
@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from fb_capitalbot.views import CapitalBotView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^fb_yomamabot/', include('fb_yomamabot.urls')),
+    url(r'^fb_capitalbot/', include('fb_capitalbot.urls')),
+    url(r'^66d2b8f4a09cd35cb23076a1da5d51529136a3373fd570b122/?$', CapitalBotView.as_view()),
 ]
